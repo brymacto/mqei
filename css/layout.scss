@@ -1,0 +1,68 @@
+$centered-navigation-height: 60px;
+$centered-navigation-logo-height: 2em;
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+.navigation-centered-wrapper {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  .nav-link, .nav-link a {
+    font-size: 0.90em;
+    color: $medium-gray;
+    text-transform: uppercase;
+    &:hover {
+      color: $mqe-orange;
+    }
+  }
+}
+
+
+
+h1, h2, h3 {
+  color: $mqe-orange;
+}
+
+.hero .hero-inner {
+  text-align: left;
+  .hero-copy {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: left;
+    margin-left: 0px;
+    margin-right: 0px;
+    p {
+     text-align: left;
+     margin-left: 0px;
+     margin-right: 0px;
+     max-width: 100%;
+   }
+   .tagline {
+    color: $white;
+    font-size: 3.5em;
+    font-weight: bold;
+    line-height: 1.25;
+  }
+
+}
+
+}
+
+
+
+section {
+  @include outer-container;
+  padding: 1em;
+}
+
+.logo .square {
+  margin-bottom: -$centered-navigation-logo-height / 3;
+  max-height: $centered-navigation-logo-height;
+  display: inline-block;
+  background-color: $mqe-orange;
+  width: 15px;
+  height: 15px;
+
+}

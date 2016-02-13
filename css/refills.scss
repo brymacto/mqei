@@ -1,0 +1,150 @@
+.hero {
+  $base-border-radius: 3px !default;
+  $action-color: #477DCA !default;
+  $large-screen: em(860) !default;
+  $hero-background-top: #7F99BE;
+  $hero-background-bottom: #20392B;
+  $hero-color: white;
+  $gradient-angle: 10deg;
+  $hero-image: 'assets/hero7.jpg';
+
+  @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
+  background-color: #324766;
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 3em;
+
+  .hero-logo img {
+    height: 4em;
+    margin-bottom: 1em;
+  }
+
+  .hero-inner {
+    @include outer-container;
+    @include clearfix;
+    margin: auto;
+    padding: 3.5em;
+    text-align: center;
+
+    .hero-copy {
+      text-align: center;
+
+      h1 {
+        color: $hero-color;
+        font-size: 1.6em;
+        margin-bottom: 0.5em;
+
+        @include media($large-screen) {
+          font-size: 1.8em;
+        }
+      }
+
+      p {
+        color: $hero-color;
+        line-height: 1.4em;
+        margin: 0 auto 3em auto;
+
+        @include media($large-screen) {
+          font-size: 1.1em;
+          max-width: 40%;
+        }
+      }
+    }
+  }
+}
+
+
+.navigation-centered {
+  $large-screen: 50em !default;
+  $centered-navigation-height: 60px;
+  $centered-navigation-logo-height: 2em;
+
+  width: 100%;
+
+  // Mobile view
+  .mobile-logo {
+    display: inline;
+    float: left;
+
+    @include media($large-screen) {
+      display: none;
+    }
+
+    img, .square {
+      max-height: $centered-navigation-logo-height;
+    }
+  }
+
+  .navigation-centered-mobile-menu {
+    float: right;
+    padding-top: 0.5em;
+
+    @include media ($large-screen) {
+      display: none;
+    }
+  }
+
+  // Nav menu
+  .navigation-centered-wrapper {
+    @include clearfix;
+    @include outer-container;
+    position: relative;
+  }
+
+  ul.navigation-centered-menu {
+    clear: both;
+    display: none;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+
+    &.show {
+      display: block;
+    }
+
+    @include media ($large-screen) {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  // Nav items
+  ul li.nav-link {
+    display: block;
+    text-align: right;
+    width: 100%;
+
+    a {
+      display: inline-block;
+    }
+
+    &:last-child a {
+      padding-right: 0;
+    }
+
+    @include media($large-screen) {
+      display: inline;
+
+      a {
+        padding-right: 1em;
+      }
+    }
+  }
+
+  // Centered logo
+  li.logo.nav-link {
+    display: none;
+    line-height: 0;
+
+    @include media($large-screen) {
+      display: inline;
+    }
+  }
+
+  .logo img, .logo .square {
+    margin-bottom: -$centered-navigation-logo-height / 3;
+    max-height: $centered-navigation-logo-height;
+  }
+}
