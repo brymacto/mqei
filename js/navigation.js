@@ -1,13 +1,15 @@
 $(document).ready(function() {
-  var menuToggle = $("#js-navigation-centered-mobile-menu").unbind();
-  $("#js-navigation-centered-menu").removeClass("show");
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
 
-  menuToggle.on("click", function(e) {
+  menuToggle.on('click', function(e) {
     e.preventDefault();
-    $("#js-navigation-centered-menu").slideToggle(function(){
-      if($("#js-navigation-centered-menu").is(":hidden")) {
-        $("#js-navigation-centered-menu").removeAttr("style");
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
       }
     });
   });
 });
+
+

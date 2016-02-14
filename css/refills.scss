@@ -55,44 +55,66 @@
 }
 
 
-.navigation-centered {
-  $large-screen: 50em !default;
-  $centered-navigation-height: 60px;
-  $centered-navigation-logo-height: 2em;
 
-  width: 100%;
+
+
+
+
+
+
+.navigation {
+  $large-screen: 50em !default;
+  $medium-screen: 30em !default;
 
   // Mobile view
-  .mobile-logo {
-    display: inline;
-    float: left;
-
-    @include media($large-screen) {
-      display: none;
-    }
-
-    img, .square {
-      max-height: $centered-navigation-logo-height;
-    }
-  }
-
-  .navigation-centered-mobile-menu {
+  .navigation-menu-button {
+    display: block;
     float: right;
+    margin: 0;
     padding-top: 0.5em;
 
-    @include media ($large-screen) {
+    @include media ($medium-screen) {
       display: none;
     }
   }
 
   // Nav menu
-  .navigation-centered-wrapper {
+  .navigation-wrapper {
     @include clearfix;
-    @include outer-container;
     position: relative;
   }
 
-  ul.navigation-centered-menu {
+  .logo {
+    float: left;
+
+    @include media ($medium-screen) {
+      float: none;
+      text-align: center;
+      display: block;
+    }
+
+    @include media ($large-screen) {
+      float: left;
+    }
+
+    img {
+      max-height: 3em;
+      padding-right: 2em;
+    }
+  }
+
+  nav {
+    float: none;
+
+    @include media ($medium-screen) {
+      float: left;
+      text-align: center;
+      line-height: 1.5em;
+      padding-top: 0.3em;
+    }
+  }
+
+  ul.navigation-menu {
     clear: both;
     display: none;
     margin: 0 auto;
@@ -100,13 +122,14 @@
     padding: 0;
     width: 100%;
 
-    &.show {
+    @include media ($medium-screen) {
       display: block;
+      margin: 0;
+      padding: 0;
     }
 
-    @include media ($large-screen) {
+    &.show {
       display: block;
-      text-align: center;
     }
   }
 
@@ -116,35 +139,19 @@
     text-align: right;
     width: 100%;
 
-    a {
-      display: inline-block;
-    }
-
-    &:last-child a {
-      padding-right: 0;
-    }
-
-    @include media($large-screen) {
+    @include media ($medium-screen) {
+      background: transparent;
       display: inline;
-
-      a {
-        padding-right: 1em;
-      }
+      text-decoration: none;
+      width: auto;
     }
   }
 
-  // Centered logo
-  li.logo.nav-link {
-    display: none;
-    line-height: 0;
+  li.nav-link a {
+    display: inline-block;
 
-    @include media($large-screen) {
-      display: inline;
+    @include media ($large-screen) {
+      padding-right: 1em;
     }
-  }
-
-  .logo img, .logo .square {
-    margin-bottom: -$centered-navigation-logo-height / 3;
-    max-height: $centered-navigation-logo-height;
   }
 }
