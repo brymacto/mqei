@@ -883,6 +883,10 @@ section {
         width: 48.82117%; }
         .courses .course:last-child {
           margin-right: 0; }
+        .courses .course:nth-child(3n) {
+          margin-right: 2.35765%; }
+        .courses .course:nth-child(3n+1) {
+          clear: none; }
         .courses .course:nth-child(2n) {
           margin-right: 0; }
         .courses .course:nth-child(2n+1) {
@@ -907,6 +911,8 @@ section {
       padding-top: 0.5em;
       padding-bottom: 0.5em;
       margin-bottom: 1em; }
+    .courses .course .dates {
+      font-weight: bold; }
     .courses .course .fee {
       float: right;
       top: 0px; }
