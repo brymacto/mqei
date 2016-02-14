@@ -1,6 +1,16 @@
 $navigation-height: 60px;
 $navigation-logo-height: 2em;
 
+$mobile-screen: 480px;
+$large-screen: 900px;
+$medium-screen: 600px;
+$medium-large-screen: 750px;
+$medium-screen-up: new-breakpoint(min-width $medium-screen 12);
+$medium-large-screen-down: new-breakpoint(max-width $medium-large-screen 12);
+$medium-screen-down: new-breakpoint(max-width $medium-screen 12);
+$large-screen-up: new-breakpoint(min-width $large-screen 12);
+$mobile-down: new-breakpoint(max-width $mobile-screen 12);
+
 body {
   font-family: 'Open Sans', sans-serif;
   padding: 0px;
@@ -19,7 +29,7 @@ header.navigation {
     color: $medium-gray;
     text-transform: uppercase;
     padding: 1em;
-     border-bottom: 2px solid transparent;
+    border-bottom: 2px solid transparent;
     &:hover {
       color: $mqe-orange;
       // border-bottom: 2px solid $mqe-orange;
@@ -63,7 +73,9 @@ h1, h2, h3 {
 
 }
 
-
+.clear {
+  clear: both;
+}
 
 section {
   @include outer-container;
@@ -78,4 +90,57 @@ section {
   width: 15px;
   height: 15px;
 
+}
+.courses {
+  @include outer-container;
+  .course {
+    box-shadow: 0 2px 4px darken($base-background-color, 10%);
+    @include span-columns(4);
+    @include omega(3n);
+
+    @include media($medium-large-screen-down) {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+
+    @include media($medium-screen-down) {
+      @include span-columns(12);
+    }
+
+    background-color: $white;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border: 1px solid $light-gray;
+    min-height: 10em;
+    position: relative;
+
+    div {
+      padding-left: 1em;
+      padding-right: 1em;
+      font-size: 0.85em;
+    }
+    .description {
+      font-size: 1em;
+      color: $mqe-orange;
+      font-weight: bold;
+      border-bottom: 1px solid darken($base-background-color, 10%);
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      margin-bottom: 1em;
+    }
+    .fee {
+      float: right;
+      top: 0px;
+    }
+
+    .course-footer {
+      padding: 0px;
+      position: absolute;
+      bottom: 0px;
+      display: block;
+      width: 100%;
+      padding-top: 0.25em;
+      padding-bottom: 0.25em;
+    }
+  }
 }
