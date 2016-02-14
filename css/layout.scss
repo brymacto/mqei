@@ -7,15 +7,22 @@ body {
   margin: 0px;
 }
 
+header.navigation-centered {
+  background-color: $white;
+  border-bottom: 2px solid $mqe-orange;
+}
+
 .navigation-centered-wrapper {
-  padding-top: 1em;
-  padding-bottom: 1em;
-  .nav-link, .nav-link a {
+  padding: 1em;
+  .nav-link a {
     font-size: 0.90em;
-    color: $medium-gray;
+    color: $mqe-orange;
     text-transform: uppercase;
+    padding: 1em;
+     border-bottom: 2px solid transparent;
     &:hover {
-      color: $mqe-orange;
+      color: $medium-gray;
+      border-bottom: 2px solid $medium-gray;
     }
   }
 }
